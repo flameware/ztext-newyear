@@ -1,22 +1,84 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, user-scalable=no"
-    />
-    <title>Happy New Year</title>
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@800&display=swap");
-      * {
-        margin: 0;
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>Goodbye 2020</title>
+  <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+  <style>
+    /* @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap'); */
+
+    .nanumsquare {
+      font-family: 'NanumSquare', sans-serif !important;
+    }
+
+    * {
+      margin: 0;
+    }
+
+    body {
+      background-color: #eef9f3;
+    }
+
+    .container {
+      margin-top: 5vh;
+      display: grid;
+      grid-template-columns: 50px 1fr 50px;
+      grid-template-rows: 120px 1fr 1fr 1fr 1fr 1fr 120px;
+      grid-template-areas:
+        ". . ."
+        ". one ."
+        ". two ."
+        ". three ."
+        ". four ."
+        ". five ."
+        ". . .";
+
+      width: 100vw;
+      height: 90vh;
+      background-color: #eef9f3;
+    }
+
+    h1 {
+      font-family: 'NanumSquare', sans-serif;
+      font-weight: 900;
+      font-size: 4em;
+      color: #09aa5c;
+      align-self: center;
+      justify-self: center;
+    }
+
+    .one {
+      grid-area: one;
+    }
+
+    .two {
+      grid-area: two;
+    }
+
+    .three {
+      grid-area: three;
+    }
+
+    .four {
+      grid-area: four;
+    }
+
+    .five {
+      grid-area: five;
+    }
+
+    @media screen and (min-width: 769px) {
+      h1 {
+        font-size: 9em;
       }
+
       .container {
         display: grid;
+        margin-top: 0;
         grid-template-columns: 50px 1fr 50px;
-        grid-template-rows: repeat(1fr);
+        grid-template-rows: 150px 1fr 1fr 1fr 1fr 1fr 150px;
         grid-template-areas:
           ". . ."
           ". one ."
@@ -30,63 +92,37 @@
         height: 100vh;
         background-color: #eef9f3;
       }
-      h1 {
-        font-family: "Nanum Myeongjo", serif;
-        font-weight: 800;
-        font-size: 4em;
-        color: #09aa5c;
-        align-self: center;
-        justify-self: center;
-      }
+    }
+  </style>
+</head>
 
-      .one {
-        grid-area: one;
-      }
-      .two {
-        grid-area: two;
-      }
-      .three {
-        grid-area: three;
-      }
-      .four {
-        grid-area: four;
-      }
-      .five {
-        grid-area: five;
-      }
+<body>
+  <div class="container">
+    <h1 class="hero-text one">잘 가</h1>
+    <h1 class="hero-text two">2020</h1>
+    <h1 class="hero-text three">가는 김에</h1>
+    <h1 class="hero-text four">코로나도</h1>
+    <h1 class="hero-text five">데려가</h1>
+  </div>
+  <script src="ztext.min.js"></script>
+  <script>
+    var ztxt = new Ztextify(".hero-text", {
+      depth: "2rem",
+      fade: false,
+      perspective: "none",
+      direction: "both",
+      event: "pointer",
+      eventRotation: "60deg",
+      eventDirection: "reverse",
+    });
+    function preventBehavior(e) {
+      e.preventDefault();
+    }
 
-      @media screen and (min-width: 769px) {
-        h1 {
-          font-size: 10em;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <h1 class="hero-text one">잘 가</h1>
-      <h1 class="hero-text two">2020</h1>
-      <h1 class="hero-text three">가는 김에</h1>
-      <h1 class="hero-text four">코로나도</h1>
-      <h1 class="hero-text five">데려가</h1>
-    </div>
-    <script src="ztext.min.js"></script>
-    <script>
-      var ztxt = new Ztextify(".hero-text", {
-        depth: "3rem",
-        fade: false,
-        perspective: "none",
-        direction: "both",
-        event: "pointer",
-        eventRotation: "60deg",
-      });
-      function preventBehavior(e) {
-        e.preventDefault();
-      }
+    document.addEventListener("touchmove", preventBehavior, {
+      passive: false,
+    });
+  </script>
+</body>
 
-      document.addEventListener("touchmove", preventBehavior, {
-        passive: false,
-      });
-    </script>
-  </body>
 </html>
