@@ -40,21 +40,12 @@
         ". three ."
         ". four ."
         ". five ."
-        ". . .";
+        ". overlaytext .";
 
       width: 100vw;
       height: 85vh;
       background-color: #eef9f3;
       align-self: center;
-    }
-
-    h1 {
-      font-family: 'NanumSquare', sans-serif;
-      font-weight: 900;
-      font-size: 4em;
-      color: #09aa5c;
-      align-self: center;
-      justify-self: center;
     }
 
     .one {
@@ -77,9 +68,64 @@
       grid-area: five;
     }
 
-    @media screen and (min-width: 769px) {
+    .overlaytext {
+      grid-area: overlaytext;
+      font-family: 'NanumSquare', sans-serif;
+      font-size: 0.8em;
+      color: #999999;
+      align-self: center;
+      justify-self: center;
+    }
+
+    .overlaytext a {
+      color: #ff0000;
+    }
+
+    h1 {
+      font-family: 'NanumSquare', sans-serif;
+      font-weight: 900;
+      font-size: 4em;
+      color: #09aa5c;
+      align-self: center;
+      justify-self: center;
+    }
+
+
+    @media screen and (min-width: 769px) and (max-width: 1680px) {
+      h1 {
+        font-size: 7em;
+      }
+
+      .overlaytext {
+        font-size: 1em;
+      }
+
+      .container {
+        display: grid;
+        margin-top: 0;
+        grid-template-columns: 50px 1fr 50px;
+        grid-template-rows: 80px 1fr 1fr 1fr 1fr 1fr 80px;
+        grid-template-areas:
+          ". . ."
+          ". one ."
+          ". two ."
+          ". three ."
+          ". four ."
+          ". five ."
+          ". overlaytext .";
+        width: 100vw;
+        height: 90vh;
+        background-color: #eef9f3;
+      }
+    }
+
+    @media screen and (min-width: 1681px) {
       h1 {
         font-size: 9em;
+      }
+
+      .overlaytext {
+        font-size: 1.2em;
       }
 
       .container {
@@ -94,7 +140,7 @@
           ". three ."
           ". four ."
           ". five ."
-          ". . .";
+          ". overlaytext .";
         width: 100vw;
         height: 90vh;
         background-color: #eef9f3;
@@ -110,7 +156,11 @@
     <h1 class="hero-text three">가는 김에</h1>
     <h1 class="hero-text four">코로나도</h1>
     <h1 class="hero-text five">데려가</h1>
+    <p class="overlaytext">by <a href="https://massivevoid.com" alt="Massive Void Dot Com">Massive Void</a></p>
   </div>
+  <!-- <div class="overlay">
+    <p class="overlaytext">by Massive Void | Seongki Sohn </p>
+  </div> -->
   <script src="ztext.min.js"></script>
   <script>
     var ztxt = new Ztextify(".hero-text", {
